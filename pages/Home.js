@@ -1,5 +1,5 @@
 import { useTheme } from '@react-navigation/native';
-import { StyleSheet, Text, View, Image, ImageBackground, FlatList, StatusBar, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, ImageBackground, FlatList, StatusBar, Button } from 'react-native';
 
 // images
 import AlatBantu from "../assets/Home/alat-bantu.png";
@@ -69,86 +69,88 @@ export default function Home({ navigation }) {
     ]
 
     return (
-        <View style={styles.container}>
-            <StatusBar
-                barStyle='light-content'
-                backgroundColor={colors['taro-dark']}
-            />
-            <Image
-                source={require('../assets/Home/background.png')}
-                style={{
-                    position: 'absolute',
-                    width: '100%',
-                }}
-            />
-            <View style={styles.view}>
-                <View style={{ padding: 2, backgroundColor: 'white', borderRadius: 50 }}>
-                    <Image
-                        source={{
-                            uri: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
-                        }}
-                        style={{
-                            width: 50,
-                            height: 50,
-                            borderRadius: 50
-                        }}
-                    />
+        <ScrollView>
+            <View style={styles.container}>
+                <StatusBar
+                    barStyle='light-content'
+                    backgroundColor={colors['taro-dark']}
+                />
+                <Image
+                    source={require('../assets/Home/background.png')}
+                    style={{
+                        position: 'absolute',
+                        width: '100%',
+                    }}
+                />
+                <View style={styles.view}>
+                    <View style={{ padding: 2, backgroundColor: 'white', borderRadius: 50 }}>
+                        <Image
+                            source={{
+                                uri: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
+                            }}
+                            style={{
+                                width: 50,
+                                height: 50,
+                                borderRadius: 50
+                            }}
+                        />
+                    </View>
+                    <Text style={{
+                        marginLeft: 20,
+                        fontSize: 25,
+                        fontWeight: 'bold',
+                        color: 'white'
+                    }}>Halo, Rehan baik!</Text>
                 </View>
-                <Text style={{
-                    marginLeft: 20,
-                    fontSize: 25,
-                    fontWeight: 'bold',
-                    color: 'white'
-                }}>Halo, Rehan baik!</Text>
-            </View>
-            <FlatList
-                contentContainerStyle={{ flexGrow: 1 }}
-                data={data}
-                style={styles.scroll_container}
-                renderItem={
-                    ({ item }) => (
-                        <View onTouchStart={() => navigation.navigate(item.onPress)} style={styles.card}>
-                            <ImageBackground
-                                source={item.image}
-                                style={{
-                                    height: 70,
-                                    width: '100%',
-                                    overflow: 'hidden',
-                                    borderTopLeftRadius: 10,
-                                    borderTopRightRadius: 10,
-                                }}
-                            />
-                            <View style={{
-                                // padding: 5,
-                                paddingVertical: 6,
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                                width: '100%'
-                            }}>
-                                <View 
-                                style={{
-                                    width: '90%'
-                                }}
-                                >
-                                    <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{item.title}</Text>
-                                    <Text style={{ color: 'gray', width: '95%' }}>{item.deskripsi}</Text>
-                                </View>
-                                    <MaterialCommunityIcons 
-                                    name='chevron-right'
-                                    size={25}
+                <FlatList
+                    contentContainerStyle={{ flexGrow: 1 }}
+                    data={data}
+                    style={styles.scroll_container}
+                    renderItem={
+                        ({ item }) => (
+                            <View onTouchStart={() => navigation.navigate(item.onPress)} style={styles.card}>
+                                <ImageBackground
+                                    source={item.image}
                                     style={{
-                                        width: '10%'
+                                        height: 70,
+                                        width: '100%',
+                                        overflow: 'hidden',
+                                        borderTopLeftRadius: 10,
+                                        borderTopRightRadius: 10,
                                     }}
-                                    />
+                                />
+                                <View style={{
+                                    // padding: 5,
+                                    paddingVertical: 6,
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                    width: '100%'
+                                }}>
+                                    <View 
+                                    style={{
+                                        width: '90%'
+                                    }}
+                                    >
+                                        <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{item.title}</Text>
+                                        <Text style={{ color: 'gray', width: '95%' }}>{item.deskripsi}</Text>
+                                    </View>
+                                        <MaterialCommunityIcons 
+                                        name='chevron-right'
+                                        size={25}
+                                        style={{
+                                            width: '10%'
+                                        }}
+                                        />
+                                </View>
                             </View>
-                        </View>
-                    )
-                }
-            >
+                        )
+                    }
+                >
 
-            </FlatList>
-            <StatusBar style="auto" />
-        </View>
+                </FlatList>
+                <StatusBar style="auto" />
+            </View>
+        </ScrollView>
     )
 }
