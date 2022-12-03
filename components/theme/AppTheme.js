@@ -9,6 +9,22 @@ const MyTheme = {
       'taro-lighter': '#C2AFE9',
       'taro-lightest': '#F0EBFA',
     },
+    fontConfig: {
+      Roboto: {
+        700: {
+          normal: "Roboto-Bold",
+          italic: "Roboto-LightItalic",
+        },
+      }
+    },
+
+    fonts: {
+      heading: "Roboto",
+      body: "Roboto",
+      mono: "Roboto",
+    },
   };
+  
+  
 
   export { MyTheme }
