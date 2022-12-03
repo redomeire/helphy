@@ -7,6 +7,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { TailwindProvider, useTailwind } from "tailwind-rn";
 import utilities from "./tailwind.json";
 
+// Sign Up
+import SignUp from "./pages/SignUp";
+
 // home screen
 import Home from "./pages/Home";
 
@@ -43,7 +46,7 @@ const bottomAppBarData = [
   {
     name: 'Profile',
     icon: "account-circle",
-    component: Login
+    component: SignUp
   },
 ]
 
