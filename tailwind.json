@@ -1,0 +1,16 @@
+{
+	"bg-taro": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(95 51 186 / var(--tw-bg-opacity))"
+		}
+	},
+	"p-10": {
+		"style": {
+			"paddingTop": 40,
+			"paddingRight": 40,
+			"paddingBottom": 40,
+			"paddingLeft": 40
+		}
+	}
+}

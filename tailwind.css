@@ -1,0 +1,8 @@
+.bg-taro {
+  --tw-bg-opacity: 1;
+  background-color: rgb(95 51 186 / var(--tw-bg-opacity))
+}
+
+.p-10 {
+  padding: 2.5rem
+}
