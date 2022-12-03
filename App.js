@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer, useTheme } from "@react-navigation/native";
-import { Image, Text, View } from "react-native";
+import { StatusBar, View } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // tailwind
 import { TailwindProvider, useTailwind } from "tailwind-rn";
@@ -8,24 +9,40 @@ import utilities from "./tailwind.json";
 
 // home screen
 import Home from "./pages/Home";
-import HomeIcon from './assets/favicon.png'
 
 // login screen
 import Login from "./pages/Login";
-import LoginIcon from './assets/favicon.png'
 import { MyTheme } from "./components/theme/AppTheme";
+
+// icon
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const Tab = createBottomTabNavigator();
 
 const bottomAppBarData = [
   {
     name: 'Home',
-    icon: HomeIcon,
+    icon: "home",
     component: Home
   },
   {
-    name: 'Login',
-    icon: LoginIcon,
+    name: 'History',
+    icon: "history",
+    component: Home
+  },
+  {
+    name: 'Tes',
+    icon: "microphone",
+    component: Login
+  },
+  {
+    name: 'Chat',
+    icon: "android-messages",
+    component: Login
+  },
+  {
+    name: 'Profile',
+    icon: "account-circle",
     component: Login
   },
 ]
@@ -59,16 +76,21 @@ export default function App() {
                       const { colors } = useTheme();
 
                       return (
-                        <View style={{ alignItems: 'center' }}>
-                          <Image source={data.icon}
-                            resizeMode='contain'
-                            style={{
-                              width: 25,
-                              height: 25,
-                              tintColor: focused && colors['taro']
-                            }}
+                        <View style={{ 
+                          alignItems: 'center',
+                          backgroundColor: index === 2 && colors['taro-light'],
+                          padding: index === 2 ? 15 : 0,
+                          borderRadius: 50,
+                          display: index > 4 ? 'none' : 'flex'
+                          }}>
+                          <MaterialCommunityIcons 
+                          name={data.icon} 
+                           size={30}
+                          style={{
+                            width: 30,
+                            color: index === 2 && focused ? 'white' : focused ? colors['taro-light'] : index === 2 ? 'white' : 'gray'
+                          }}
                           />
-                          <Text>{data.name}</Text>
                         </View>
                       )
                     },
