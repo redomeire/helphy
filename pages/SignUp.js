@@ -6,27 +6,46 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default function Login() {
-    const { fonts, colors } = useTheme();
+    const { colors } = useTheme()
 
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Image 
-                source={require('../assets/Login-SignUp/Saly-1.png')}
+                <Image
+                source={require('../assets/Login-SignUp/Saly-12.png')}
                 style={{
-                    width: 400,
-                    height: 400
+                    width: 355,
+                    height:355
                 }}
                 />
                 <Text fontWeight="700" style={{
                     color:colors['taro'],
-                    fontSize:42,
+                    fontSize:40,
                     marginRight:200,
                     fontWeight:'bold',
-                    marginTop:-20
+                    marginTop:-20,
+                    marginLeft:-55
                 }}
-                >Masuk</Text>
+                >Daftar</Text>
 
+                <View style={{
+                        flexDirection:'row',
+                        marginTop:20
+                    }}>
+                    <Feather
+                    name="type" 
+                    size={30} 
+                    style={{
+                        color:colors['taro-light'],
+                        marginTop:10
+                    }}>
+                    </Feather>
+                    <TextInput 
+                    placeholder='Nama Lengkap' 
+                    style={styles.input}
+                    />
+                </View>
+                
                 <View style={{
                     flexDirection:'column',
                     marginTop:20
@@ -53,6 +72,24 @@ export default function Login() {
                         marginTop:20
                     }}>
                     <Feather
+                    name="phone" 
+                    size={30} 
+                    style={{
+                        color:colors['taro-light'],
+                        marginTop:10
+                    }}>
+                    </Feather>
+                    <TextInput 
+                    placeholder='Nomor Telepon' 
+                    style={styles.input}
+                    />
+                </View>
+                
+                    <View style={{
+                        flexDirection:'row',
+                        marginTop:20
+                    }}>
+                    <Feather
                         name="lock" 
                         size={30} 
                         style={{
@@ -65,79 +102,29 @@ export default function Login() {
                         style={styles.input}
                         />
                     </View>
-
-                    <Text
-                    style={{
-                        display:'flex',
-                        justifyContent:'flex-end',
-                        marginTop:10,
-                        marginBottom:10,
-                        fontSize:13,
-                        color:'#006266',
-                        textAlign:'right'
-                    }}
-                    >Lupa Password?</Text>
-
-                    <Pressable style={styles.button}>
-                        <Text style={styles.text}>Masuk</Text>
-                    </Pressable>
-
-                    <Text
-                    style={{
-                        textAlign:'center',
-                        marginTop:20,
-                        fontSize:13,
-                        color:'#006266',
-                        fontWeight:'400',
-                    }}
-                    >Lanjutkan dengan</Text>
                 </View>
 
-                <View style={{
+                <Text style={{
+                    marginBottom:20,
+                    fontWeight:'400',
+                    fontSize:13,
+                    justifyContent:'center',
+                    marginTop:30,
+                    color:'#006266',
+                    width:350
+                }}>Dengan melakukan pendaftaran, anda telah menyetujui <Text style={{color:colors['taro'], fontWeight:'600'}}>syarat dan ketentuan</Text> yang berlaku. </Text>
+                
+                <Pressable style={styles.button}>
+                    <Text style={styles.text}>Daftar</Text>
+                </Pressable>
 
-                }}>
-                    <View style={{
-                        flexDirection:'row',
-                        marginBottom:20
-                    }}>
-                        <Pressable style={{
-                            marginTop:10,
-                            padding:15,
-                            paddingLeft:30,
-                            borderRadius:10,
-                            paddingRight:30,
-                            backgroundColor: colors['taro-lightest'],
-                            marginRight:10
-                        }}>
-                            <AntDesign name='google' size={30} style={{
-                                color:colors['taro'],
-                            }}></AntDesign>
-                        </Pressable>
-
-                        <Pressable style={{
-                            marginTop:10,
-                            padding:15,
-                            borderRadius:10,
-                            paddingLeft:30,
-                            paddingRight:30,
-                            backgroundColor: colors['taro-lightest']
-                        }}>
-                            <AntDesign name='apple1' size={30} style={{
-                                color:colors['taro'],
-                            }}></AntDesign>
-                        </Pressable>
-                    </View>
-
-                    <Text style={{
+                <Text style={{
                         marginBottom:20,
                         fontWeight:'400',
                         fontSize:13,
                         color:'#006266',
                         textAlign:'center',
-                    }}>Belum punya akun? <Text style={{color:colors['taro'], fontWeight:'600'}}>Daftar</Text></Text>
-                </View>
-
-                <StatusBar style="auto" />
+                    }}>Sudah punya akun? <Text style={{color:colors['taro'], fontWeight:'600'}}>Masuk.</Text></Text>
             </View>
         </ScrollView>
     )
@@ -166,7 +153,7 @@ const styles = StyleSheet.create({
         cursor:'pointer',
         borderRadius: 20,
         width:270,
-        marginLeft:40,
+        marginBottom:10,
         elevation: 5,
         backgroundColor: '#7F4FE3',
     },
