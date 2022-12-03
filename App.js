@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { MyTheme } from './components/theme/AppTheme';
 import Login from './pages/AuthScreen/Login';
 import Signup from './pages/AuthScreen/SignUp';
-import BottomAppBarScreen from './pages/BottomNavigationScreen/BottomAppBarScreen';
+import BottomAppBarScreen from './components/navigators/BottomAppBarScreen';
 
 const Stack = createNativeStackNavigator();
 

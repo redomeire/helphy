@@ -6,9 +6,9 @@ import { View } from "react-native";
 import { TailwindProvider, useTailwind } from "tailwind-rn";
 import utilities from "../../tailwind.json";
 
-import Home from "../Home";
+import Home from "../../pages/Home";
 
-import { MyTheme } from "../../components/theme/AppTheme";
+import { MyTheme } from "../theme/AppTheme";
 
 // icon
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
