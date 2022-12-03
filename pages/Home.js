@@ -1,5 +1,5 @@
 import { useTheme } from '@react-navigation/native';
-import { StyleSheet, Text, View, Image, ImageBackground, FlatList, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, FlatList, StatusBar, Button } from 'react-native';
 
 // images
 import AlatBantu from "../assets/Home/alat-bantu.png";
@@ -9,7 +9,7 @@ import ReviewTempat from "../assets/Home/review-tempat.png";
 // icon
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-export default function Home({navigation}) {
+export default function Home({ navigation }) {
     const { colors } = useTheme();
 
     const styles = StyleSheet.create({
@@ -123,15 +123,24 @@ export default function Home({navigation}) {
                                 paddingVertical: 6,
                                 flexDirection: 'row',
                                 alignItems: 'center',
-                                justifyContent: 'space-between'
+                                justifyContent: 'space-between',
+                                width: '100%'
                             }}>
-                                <View>
+                                <View 
+                                style={{
+                                    width: '90%'
+                                }}
+                                >
                                     <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{item.title}</Text>
-                                    <Text style={{ color: 'gray' }}>{item.deskripsi}</Text>
+                                    <Text style={{ color: 'gray', width: '95%' }}>{item.deskripsi}</Text>
                                 </View>
-                                <MaterialCommunityIcons name='chevron-right'
-                                size={25}
-                                />
+                                    <MaterialCommunityIcons 
+                                    name='chevron-right'
+                                    size={25}
+                                    style={{
+                                        width: '10%'
+                                    }}
+                                    />
                             </View>
                         </View>
                     )
