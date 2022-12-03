@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useTheme } from '@react-navigation/native';
-import { StyleSheet, TextInput, Button, Text, ScrollView, View, Image, ImageBackground, Pressable,} from 'react-native';
+import { StyleSheet, TextInput, Button, Text, ScrollView, View, Image, ImageBackground, Pressable, TouchableOpacity,} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -43,6 +43,7 @@ export default function Login() {
                     <TextInput 
                     placeholder='Nama Lengkap' 
                     style={styles.input}
+                    textContentType='name'
                     />
                 </View>
                 
@@ -64,6 +65,7 @@ export default function Login() {
                         <TextInput 
                         placeholder='Email' 
                         style={styles.input}
+                        textContentType='emailAddress'
                         />
                     </View>
                     
@@ -82,6 +84,7 @@ export default function Login() {
                     <TextInput 
                     placeholder='Nomor Telepon' 
                     style={styles.input}
+                    textContentType='telephoneNumber'
                     />
                 </View>
                 
@@ -100,6 +103,8 @@ export default function Login() {
                         <TextInput 
                         placeholder='Password' 
                         style={styles.input}
+                        textContentType='password'
+                        secureTextEntry={true}
                         />
                     </View>
                 </View>
@@ -114,9 +119,9 @@ export default function Login() {
                     width:350
                 }}>Dengan melakukan pendaftaran, anda telah menyetujui <Text style={{color:colors['taro'], fontWeight:'600'}}>syarat dan ketentuan</Text> yang berlaku. </Text>
                 
-                <Pressable style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={() => console.log('daftar')}>
                     <Text style={styles.text}>Daftar</Text>
-                </Pressable>
+                </TouchableOpacity>
 
                 <Text style={{
                         marginBottom:20,

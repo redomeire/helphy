@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useTheme } from '@react-navigation/native';
-import { StyleSheet, TextInput, Button, Text, ScrollView, View, Image, ImageBackground, Pressable,} from 'react-native';
+import { StyleSheet, TextInput, Button, Text, ScrollView, View, Image, ImageBackground, Pressable, TouchableOpacity,} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -45,6 +45,7 @@ export default function Login() {
                         <TextInput 
                         placeholder='Email' 
                         style={styles.input}
+                        textContentType='emailAddress'
                         />
                     </View>
                     
@@ -63,6 +64,8 @@ export default function Login() {
                         <TextInput 
                         placeholder='Password' 
                         style={styles.input}
+                        textContentType='password'
+                        secureTextEntry={true}
                         />
                     </View>
 
@@ -78,9 +81,9 @@ export default function Login() {
                     }}
                     >Lupa Password?</Text>
 
-                    <Pressable style={styles.button}>
+                    <TouchableOpacity style={styles.button}>
                         <Text style={styles.text}>Masuk</Text>
-                    </Pressable>
+                    </TouchableOpacity>
 
                     <Text
                     style={{
@@ -93,9 +96,7 @@ export default function Login() {
                     >Lanjutkan dengan</Text>
                 </View>
 
-                <View style={{
-
-                }}>
+                <View>
                     <View style={{
                         flexDirection:'row',
                         marginBottom:20
