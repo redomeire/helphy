@@ -1,5 +1,5 @@
 import { useTheme } from '@react-navigation/native';
-import { StyleSheet, Text, View, Image, ScrollView, ImageBackground, FlatList, StatusBar, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, ImageBackground, StatusBar } from 'react-native';
 
 // images
 import AlatBantu from "../assets/Home/alat-bantu.png";
@@ -102,53 +102,58 @@ export default function Home({ navigation }) {
                         color: 'white'
                     }}>Halo, Rehan baik!</Text>
                 </View>
-                <FlatList
-                    contentContainerStyle={{ flexGrow: 1 }}
-                    data={data}
-                    style={styles.scroll_container}
-                    renderItem={
-                        ({ item }) => (
-                            <View onTouchStart={() => navigation.navigate(item.onPress)} style={styles.card}>
-                                <ImageBackground
-                                    source={item.image}
-                                    style={{
-                                        height: 70,
-                                        width: '100%',
-                                        overflow: 'hidden',
-                                        borderTopLeftRadius: 10,
-                                        borderTopRightRadius: 10,
-                                    }}
-                                />
-                                <View style={{
-                                    // padding: 5,
-                                    paddingVertical: 6,
-                                    flexDirection: 'row',
-                                    alignItems: 'center',
-                                    justifyContent: 'space-between',
-                                    width: '100%'
-                                }}>
-                                    <View 
-                                    style={{
-                                        width: '90%'
-                                    }}
-                                    >
-                                        <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{item.title}</Text>
-                                        <Text style={{ color: 'gray', width: '95%' }}>{item.deskripsi}</Text>
-                                    </View>
-                                        <MaterialCommunityIcons 
-                                        name='chevron-right'
-                                        size={25}
+                <View style={{
+                    padding: 20,
+                    paddingTop: 40,
+                    backgroundColor: 'white',
+                    borderTopLeftRadius: 35,
+                    borderTopRightRadius: 35
+                }}>
+                    {
+                        data.map((item, index) => {
+                            return (
+                                <View key={index} style={styles.card}>
+                                    <ImageBackground
+                                        source={item.image}
                                         style={{
-                                            width: '10%'
+                                            height: 70,
+                                            width: '100%',
+                                            overflow: 'hidden',
+                                            borderTopLeftRadius: 10,
+                                            borderTopRightRadius: 10,
                                         }}
+                                    />
+                                    <View style={{
+                                        padding: 5,
+                                        paddingVertical: 6,
+                                        flexDirection: 'row',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-between',
+                                        width: '100%'
+                                    }}>
+                                        <View
+                                            style={{
+                                                width: '90%'
+                                            }}
+                                        >
+                                            <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{item.title}</Text>
+                                            <Text style={{ color: 'gray', width: '95%' }}>{item.deskripsi}</Text>
+                                        </View>
+                                        <MaterialCommunityIcons
+                                            onPress={() => navigation.navigate(item.onPress)}
+                                            name='chevron-right'
+                                            size={25}
+                                            style={{
+                                                width: '10%',
+                                                color: 'black'
+                                            }}
                                         />
+                                    </View>
                                 </View>
-                            </View>
-                        )
+                            )
+                        })
                     }
-                >
-
-                </FlatList>
+                </View>
                 <StatusBar style="auto" />
             </View>
         </ScrollView>
