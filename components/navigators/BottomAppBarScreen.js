@@ -7,6 +7,7 @@ import { TailwindProvider, useTailwind } from "tailwind-rn";
 import utilities from "../../tailwind.json";
 
 import Home from "../../pages/Home";
+import Riwayat from "../../pages/AuthScreen/Riwayat";
 
 import { MyTheme } from "../theme/AppTheme";
 
@@ -24,7 +25,7 @@ const bottomAppBarData = [
   {
     name: 'History',
     icon: "history",
-    component: Home
+    component: Riwayat
   },
   {
     name: 'Tes',
