@@ -2,9 +2,9 @@ import { useTheme } from '@react-navigation/native';
 import { StyleSheet, Text, View, Image, ScrollView, ImageBackground, StatusBar } from 'react-native';
 
 // images
-import AlatBantu from "../assets/Home/alat-bantu.png";
-import Pendamping from "../assets/Home/pendamping.png";
-import ReviewTempat from "../assets/Home/review-tempat.png";
+import AlatBantu from "../../assets/Home/alat-bantu.png";
+import Pendamping from "../../assets/Home/pendamping.png";
+import ReviewTempat from "../../assets/Home/review-tempat.png";
 
 // icon
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -52,7 +52,7 @@ export default function Home({ navigation }) {
             title: 'Alat Bantu',
             deskripsi: 'Temukan alat bantu yang kamu cari',
             image: AlatBantu,
-            onPress: 'FeatureAppNavigation'
+            onPress: 'AlatBantu'
         },
         {
             title: 'Pendamping',
@@ -64,7 +64,7 @@ export default function Home({ navigation }) {
             title: 'Review Tempat',
             deskripsi: 'Temukan tempat yang nyaman untuk teman Helphy',
             image: ReviewTempat,
-            onPress: 'Tempat'
+            onPress: 'ReviewTempat'
         },
     ]
 
@@ -76,7 +76,7 @@ export default function Home({ navigation }) {
                     backgroundColor={colors.primary.taro['taro-dark']}
                 />
                 <Image
-                    source={require('../assets/Home/background.png')}
+                    source={require('../../assets/Home/background.png')}
                     style={{
                         position: 'absolute',
                         width: '100%',
@@ -140,7 +140,7 @@ export default function Home({ navigation }) {
                                             <Text style={{ color: 'gray', width: '95%' }}>{item.deskripsi}</Text>
                                         </View>
                                         <MaterialCommunityIcons
-                                            onPress={() => navigation.navigate(item.onPress)}
+                                            onPress={() => navigation.navigate('FeatureAppNavigation', { screen: item.onPress })}
                                             name='chevron-right'
                                             size={25}
                                             style={{
