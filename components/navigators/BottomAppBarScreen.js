@@ -6,7 +6,7 @@ import { View } from "react-native";
 import { TailwindProvider, useTailwind } from "tailwind-rn";
 import utilities from "../../tailwind.json";
 
-import Home from "../../pages/Home";
+import Home from "../../pages/HomeScreen/Home";
 
 import { MyTheme } from "../theme/AppTheme";
 
