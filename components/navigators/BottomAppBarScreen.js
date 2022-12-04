@@ -8,6 +8,7 @@ import utilities from "../../tailwind.json";
 
 import Home from "../../pages/HomeScreen/Home";
 import Riwayat from "../../pages/AuthScreen/Riwayat";
+import Chat from "../../pages/AuthScreen/Chat"
 
 import { MyTheme } from "../theme/AppTheme";
 
@@ -36,7 +37,7 @@ const bottomAppBarData = [
   {
     name: 'Chat',
     icon: "android-messages",
-    component: Home
+    component: Chat
   },
   {
     name: 'Profile',

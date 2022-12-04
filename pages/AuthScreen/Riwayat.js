@@ -32,23 +32,6 @@ export default function Riwayat({Navigation}){
         },
     ]
 
-    const pilihan = () => {
-        const {colors} = useTheme();
-        
-
-        return(
-            <View style={{
-                flexDirection: 'column'
-            }}>
-                <View>
-                    <TouchableOpacity style={styles.button}>
-                        <Text></Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        )
-    }
-
     return(
         <ScrollView>
             <View>
