@@ -52,7 +52,7 @@ export default function Home({ navigation }) {
             title: 'Alat Bantu',
             deskripsi: 'Temukan alat bantu yang kamu cari',
             image: AlatBantu,
-            onPress: 'FeatureAppNavigation'
+            onPress: 'ReviewTempat'
         },
         {
             title: 'Pendamping',
@@ -140,7 +140,7 @@ export default function Home({ navigation }) {
                                             <Text style={{ color: 'gray', width: '95%' }}>{item.deskripsi}</Text>
                                         </View>
                                         <MaterialCommunityIcons
-                                            onPress={() => navigation.navigate(item.onPress)}
+                                            onPress={() => navigation.navigate('FeatureAppNavigation', { screen: item.onPress })}
                                             name='chevron-right'
                                             size={25}
                                             style={{
