@@ -22,7 +22,7 @@ export default function Home({ navigation }) {
         container: {
             paddingTop: 50,
             height: '100%',
-            backgroundColor: colors['taro-dark']
+            backgroundColor: colors.primary.taro['taro-dark']
         },
         scroll_container: {
             backgroundColor: 'white',
@@ -52,7 +52,7 @@ export default function Home({ navigation }) {
             title: 'Alat Bantu',
             deskripsi: 'Temukan alat bantu yang kamu cari',
             image: AlatBantu,
-            onPress: 'Alat'
+            onPress: 'FeatureAppNavigation'
         },
         {
             title: 'Pendamping',
@@ -73,7 +73,7 @@ export default function Home({ navigation }) {
             <View style={styles.container}>
                 <StatusBar
                     barStyle='light-content'
-                    backgroundColor={colors['taro-dark']}
+                    backgroundColor={colors.primary.taro['taro-dark']}
                 />
                 <Image
                     source={require('../assets/Home/background.png')}

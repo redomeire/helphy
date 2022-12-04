@@ -4,6 +4,7 @@ import { MyTheme } from './components/theme/AppTheme';
 import Login from './pages/AuthScreen/Login';
 import Signup from './pages/AuthScreen/SignUp';
 import BottomAppBarScreen from './components/navigators/BottomAppBarScreen';
+import FeatureAppNavigation from './components/navigators/FeatureAppNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Register" component={Signup} />
             <Stack.Screen name="BottomAppBarScreen" component={BottomAppBarScreen} />
+            <Stack.Screen name="FeatureAppNavigation" component={FeatureAppNavigation} />
         </Stack.Navigator>
     </NavigationContainer>
   );
