@@ -19,7 +19,7 @@ export default function Login({ navigation }) {
                 }}
                 />
                 <Text fontWeight="700" style={{
-                    color:colors['taro'],
+                    color:colors.primary.taro['taro'],
                     fontSize:42,
                     marginRight:200,
                     fontWeight:'bold',
@@ -38,7 +38,7 @@ export default function Login({ navigation }) {
                         name="alternate-email" 
                         size={30} 
                         style={{
-                            color:colors['taro-light'],
+                            color:colors.primary.taro['taro-light'],
                             marginTop:10
                         }}>
                         </MaterialCommunityIcons>
@@ -57,7 +57,7 @@ export default function Login({ navigation }) {
                         name="lock" 
                         size={30} 
                         style={{
-                            color:colors['taro-light'],
+                            color:colors.primary.taro['taro-light'],
                             marginTop:10
                         }}>
                         </Feather>
@@ -107,11 +107,11 @@ export default function Login({ navigation }) {
                             paddingLeft:30,
                             borderRadius:10,
                             paddingRight:30,
-                            backgroundColor: colors['taro-lightest'],
+                            backgroundColor: colors.primary.taro['taro-lightest'],
                             marginRight:10
                         }}>
                             <AntDesign name='google' size={30} style={{
-                                color:colors['taro'],
+                                color:colors.primary.taro['taro'],
                             }}></AntDesign>
                         </Pressable>
 
@@ -121,10 +121,10 @@ export default function Login({ navigation }) {
                             borderRadius:10,
                             paddingLeft:30,
                             paddingRight:30,
-                            backgroundColor: colors['taro-lightest']
+                            backgroundColor: colors.primary.taro['taro-lightest']
                         }}>
                             <AntDesign name='apple1' size={30} style={{
-                                color:colors['taro'],
+                                color:colors.primary.taro['taro'],
                             }}></AntDesign>
                         </Pressable>
                     </View>
@@ -135,7 +135,7 @@ export default function Login({ navigation }) {
                         fontSize:13,
                         color:'#006266',
                         textAlign:'center',
-                    }}>Belum punya akun? <Text onPress={() => navigation.navigate('Register')} style={{color:colors['taro'], fontWeight:'600'}}>Daftar</Text></Text>
+                    }}>Belum punya akun? <Text onPress={() => navigation.navigate('Register')} style={{color: colors.primary.taro['taro'], fontWeight:'600'}}>Daftar</Text></Text>
                 </View>
 
                 <StatusBar style="auto" />

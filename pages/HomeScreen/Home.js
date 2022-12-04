@@ -76,7 +76,7 @@ export default function Home({ navigation }) {
                     backgroundColor={colors.primary.taro['taro-dark']}
                 />
                 <Image
-                    source={require('../assets/Home/background.png')}
+                    source={require('../../assets/Home/background.png')}
                     style={{
                         position: 'absolute',
                         width: '100%',

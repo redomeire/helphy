@@ -12,6 +12,7 @@ import { MyTheme } from "../theme/AppTheme";
 
 // icon
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Profile from "../../pages/HomeScreen/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -39,7 +40,7 @@ const bottomAppBarData = [
   {
     name: 'Profile',
     icon: "account-circle",
-    component: Home
+    component: Profile
   },
 ]
 
