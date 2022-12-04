@@ -19,7 +19,7 @@ export default function Login({ navigation }) {
                 }}
                 />
                 <Text fontWeight="700" style={{
-                    color:colors['taro'],
+                    color:colors.primary.taro['taro'],
                     fontSize:40,
                     marginRight:200,
                     fontWeight:'bold',
@@ -36,7 +36,7 @@ export default function Login({ navigation }) {
                     name="type" 
                     size={30} 
                     style={{
-                        color:colors['taro-light'],
+                        color:colors.primary.taro['taro-light'],
                         marginTop:10
                     }}>
                     </Feather>
@@ -58,7 +58,7 @@ export default function Login({ navigation }) {
                         name="alternate-email" 
                         size={30} 
                         style={{
-                            color:colors['taro-light'],
+                            color:colors.primary.taro['taro-light'],
                             marginTop:10
                         }}>
                         </MaterialCommunityIcons>
@@ -77,7 +77,7 @@ export default function Login({ navigation }) {
                     name="phone" 
                     size={30} 
                     style={{
-                        color:colors['taro-light'],
+                        color:colors.primary.taro['taro-light'],
                         marginTop:10
                     }}>
                     </Feather>
@@ -96,7 +96,7 @@ export default function Login({ navigation }) {
                         name="lock" 
                         size={30} 
                         style={{
-                            color:colors['taro-light'],
+                            color:colors.primary.taro['taro-light'],
                             marginTop:10
                         }}>
                         </Feather>
@@ -117,7 +117,7 @@ export default function Login({ navigation }) {
                     marginTop:30,
                     color:'#006266',
                     width:350
-                }}>Dengan melakukan pendaftaran, anda telah menyetujui <Text style={{color:colors['taro'], fontWeight:'600'}}>syarat dan ketentuan</Text> yang berlaku. </Text>
+                }}>Dengan melakukan pendaftaran, anda telah menyetujui <Text style={{color:colors.primary.taro['taro'], fontWeight:'600'}}>syarat dan ketentuan</Text> yang berlaku. </Text>
                 
                 <TouchableOpacity style={styles.button} onPress={() => console.log('daftar')}>
                     <Text style={styles.text}>Daftar</Text>
@@ -129,7 +129,7 @@ export default function Login({ navigation }) {
                         fontSize:13,
                         color:'#006266',
                         textAlign:'center',
-                    }}>Sudah punya akun? <Text onPress={() => navigation.navigate('Login')} style={{color:colors['taro'], fontWeight:'600'}}>Masuk.</Text></Text>
+                    }}>Sudah punya akun? <Text onPress={() => navigation.navigate('Login')} style={{color:colors.primary.taro['taro'], fontWeight:'600'}}>Masuk.</Text></Text>
             </View>
         </ScrollView>
     )

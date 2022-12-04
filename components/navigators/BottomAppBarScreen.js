@@ -6,13 +6,14 @@ import { View } from "react-native";
 import { TailwindProvider, useTailwind } from "tailwind-rn";
 import utilities from "../../tailwind.json";
 
-import Home from "../../pages/Home";
+import Home from "../../pages/HomeScreen/Home";
 import Riwayat from "../../pages/AuthScreen/Riwayat";
 
 import { MyTheme } from "../theme/AppTheme";
 
 // icon
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Profile from "../../pages/HomeScreen/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +41,7 @@ const bottomAppBarData = [
   {
     name: 'Profile',
     icon: "account-circle",
-    component: Home
+    component: Profile
   },
 ]
 
