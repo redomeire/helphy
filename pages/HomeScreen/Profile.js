@@ -5,7 +5,7 @@ import { ScrollView, View, Text, StyleSheet, TextInput, TouchableOpacity } from 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Entypo from "react-native-vector-icons/Entypo";
 
-export default function Profile() {
+export default function Profile({ navigation }) {
     const { colors } = useTheme();
 
 
@@ -59,7 +59,7 @@ export default function Profile() {
                         <View style={{ borderRadius: 50, backgroundColor: colors.primary.taro['taro'], padding: 5 }}>
                             <Entypo name="language" size={30} color='white' />
                         </View>
-                        <Text style={{ marginLeft: 25, fontSize: 20, fontWeight: '700' }}>Riwayat</Text>
+                        <Text style={{ marginLeft: 25, fontSize: 20, fontWeight: '700' }}>Pilihan Bahasa</Text>
                     </View>
                     <MaterialCommunityIcons name="chevron-right" size={30} />
                 </View>
@@ -81,7 +81,7 @@ export default function Profile() {
                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <View style={{ borderRadius: 50, backgroundColor: colors.primary.taro['taro'], padding: 5 }}>
-                            <MaterialCommunityIcons name="help-circle-outline" size={30} color='white' />
+                            <MaterialCommunityIcons name="hand-heart-outline" size={30} color='white' />
                         </View>
                         <Text style={{ marginLeft: 25, fontSize: 20, fontWeight: '700' }}>Keuntungan Pakai Helphy</Text>
                     </View>
@@ -117,7 +117,7 @@ export default function Profile() {
             </View>
             <View style={{ marginBottom: 100, paddingHorizontal: 20 }}>
                 <Text style={{ marginBottom: 20 }}>Version 1.0</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('BottomAppBarScreen')} style={{
+                <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{
                     alignItems: 'center',
                     justifyContent: 'center',
                     paddingVertical: 12,
@@ -128,7 +128,7 @@ export default function Profile() {
                     elevation: 5,
                     backgroundColor: '#7F4FE3',
                 }}>
-                    <Text style={{ color: 'white', fontWeight: 'bold' }}>Masuk</Text>
+                    <Text style={{ color: 'white', fontWeight: 'bold' }}>Keluar</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>
