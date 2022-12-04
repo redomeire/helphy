@@ -1,53 +1,37 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer, useTheme } from "@react-navigation/native";
 import { View } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-// tailwind
-import { TailwindProvider, useTailwind } from "tailwind-rn";
-import utilities from "../../tailwind.json";
+// pages
+import AlatBantu from "../../pages/FeatureScreen/AlatBantu";
+import Pendamping from "../../pages/FeatureScreen/Pendamping";
+import ReviewTempat from "../../pages/FeatureScreen/ReviewTempat";
 
-import Home from "../../pages/Home";
-
-import { MyTheme } from "../theme/AppTheme";
-
-// icon
+// icons
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { useTheme } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
 
 const bottomAppBarData = [
-  {
-    name: 'Home',
-    icon: "home",
-    component: Home
-  },
-  {
-    name: 'History',
-    icon: "history",
-    component: Home
-  },
-  {
-    name: 'Tes',
-    icon: "microphone",
-    component: Home
-  },
-  {
-    name: 'Chat',
-    icon: "android-messages",
-    component: Home
-  },
-  {
-    name: 'Profile',
-    icon: "account-circle",
-    component: Home
-  },
-]
+    {
+      name: 'AlatBantu',
+      icon: "home",
+      component: AlatBantu
+    },
+    {
+      name: 'Pendamping',
+      icon: "history",
+      component: Pendamping
+    },
+    {
+      name: 'ReviewTempat',
+      icon: "microphone",
+      component: ReviewTempat
+    },
+  ]
 
-export default function BottomAppBarScreen() {
-  const tailwind = useTailwind();
-
-  return (
-    <TailwindProvider utilities={utilities}>
+const FeatureAppNavigation = () => {
+    return ( 
         <Tab.Navigator
           screenOptions={{
             headerShown: false,
@@ -73,9 +57,8 @@ export default function BottomAppBarScreen() {
                       return (
                         <View style={{ 
                           alignItems: 'center',
-                          backgroundColor: index === 2 && colors.primary.taro['taro-light'],
                           padding: index === 2 ? 15 : 0,
-                          borderRadius: 30,
+                          borderRadius: 50,
                           display: index > 4 ? 'none' : 'flex'
                           }}>
                           <MaterialCommunityIcons 
@@ -83,7 +66,7 @@ export default function BottomAppBarScreen() {
                            size={30}
                           style={{
                             width: 30,
-                            color: index === 2 && focused ? 'white' : focused ? colors.primary.taro['taro-light'] : index === 2 ? 'white' : 'gray'
+                            color: focused ? colors.primary.taro['taro-light'] : 'gray'
                           }}
                           />
                         </View>
@@ -95,6 +78,7 @@ export default function BottomAppBarScreen() {
             })
           }
         </Tab.Navigator>
-    </TailwindProvider>
-  );
+     );
 }
+ 
+export default FeatureAppNavigation;
