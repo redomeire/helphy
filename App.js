@@ -5,6 +5,7 @@ import Login from './pages/AuthScreen/Login';
 import Signup from './pages/AuthScreen/SignUp';
 import BottomAppBarScreen from './components/navigators/BottomAppBarScreen';
 import FeatureAppNavigation from './components/navigators/FeatureAppNavigation';
+import ReviewScreen from './components/navigators/ReviewScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ export default function App() {
             <Stack.Screen name="Register" component={Signup} />
             <Stack.Screen name="BottomAppBarScreen" component={BottomAppBarScreen} />
             <Stack.Screen name="FeatureAppNavigation" component={FeatureAppNavigation} />
+            <Stack.Screen name="ReviewScreen" component={ReviewScreen} />
         </Stack.Navigator>
     </NavigationContainer>
   );
