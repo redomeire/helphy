@@ -7,8 +7,8 @@ import { TailwindProvider, useTailwind } from "tailwind-rn";
 import utilities from "../../tailwind.json";
 
 import Home from "../../pages/HomeScreen/Home";
-import Riwayat from "../../pages/AuthScreen/Riwayat";
-import Chat from "../../pages/AuthScreen/Chat"
+import Riwayat from "../../pages/HomeScreen/Riwayat";
+import Chat from "../../pages/HomeScreen/Chat"
 
 import { MyTheme } from "../theme/AppTheme";
 
