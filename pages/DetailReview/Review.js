@@ -1,5 +1,5 @@
 import { useTheme } from "@react-navigation/native";
-import { Dimensions, ImageBackground, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { Dimensions, Image, ImageBackground, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
 // icons
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -85,13 +85,13 @@ export default function Review({ navigation }) {
                 <ScrollView style={{ width: '100%', borderTopLeftRadius: 50, borderTopRightRadius: 50, maxHeight: 800 }}>
                     <View style={{ backgroundColor: 'white', height: 800, marginTop: 300, borderTopLeftRadius: 50, borderTopRightRadius: 50, padding: 30 }}>
                         <ScrollView nestedScrollEnabled style={{ maxHeight: 400 }}>
-                            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Fakultas Ilmu Komputer</Text>
-                            <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 20 }}>
-                                <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={25} style={{ marginHorizontal: 5 }} />
-                                <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={25} style={{ marginHorizontal: 5 }} />
-                                <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={25} style={{ marginHorizontal: 5 }} />
-                                <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={25} style={{ marginHorizontal: 5 }} />
-                                <MaterialCommunityIcons name="star-outline" size={25} style={{ marginHorizontal: 5, color: colors.primary.seaSalt['sea-salt-darker'] }} />
+                            <Text style={{ fontSize: 25, fontWeight: 'bold' }}>Fakultas Ilmu Komputer</Text>
+                            <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 20, marginTop: 10 }}>
+                                <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={30} style={{ marginHorizontal: 5 }} />
+                                <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={30} style={{ marginHorizontal: 5 }} />
+                                <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={30} style={{ marginHorizontal: 5 }} />
+                                <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={30} style={{ marginHorizontal: 5 }} />
+                                <MaterialCommunityIcons name="star-outline" size={30} style={{ marginHorizontal: 5, color: colors.primary.seaSalt['sea-salt-darker'] }} />
                                 <Text style={{ marginLeft: 10 }}>( 75 )</Text>
                             </View>
                             <ScrollView nestedScrollEnabled horizontal style={{ marginBottom: 20 }}>
@@ -114,20 +114,75 @@ export default function Review({ navigation }) {
                                     uri: 'https://images.unsplash.com/photo-1664575196412-ed801e8333a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80'
                                 }} style={{ width: 150, height: 170, marginRight: 10 }} imageStyle={{ borderRadius: 20 }} />
                             </ScrollView>
-                            <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 20 }}>Review</Text>
+                            <Text style={{ fontSize: 25, fontWeight: 'bold', marginBottom: 20 }}>Review</Text>
                             <View>
-                                <View style={{ alignItems: 'center' }}>
-                                    <Text style={{ fontSize: 30, fontWeight: 'bold' }}>4.0</Text>
+                                <View style={{ alignItems: 'center', marginBottom: 20 }}>
+                                    <Text style={{ fontSize: 40, fontWeight: 'bold' }}>4.0</Text>
                                     <View style={{ flexDirection: 'row', marginBottom: 2 }}>
-                                        <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={15} style={{ marginHorizontal: 2 }} />
-                                        <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={15} style={{ marginHorizontal: 2 }} />
-                                        <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={15} style={{ marginHorizontal: 2 }} />
-                                        <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={15} style={{ marginHorizontal: 2 }} />
+                                        <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={22} style={{ marginHorizontal: 2 }} />
+                                        <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={22} style={{ marginHorizontal: 2 }} />
+                                        <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={22} style={{ marginHorizontal: 2 }} />
+                                        <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={22} style={{ marginHorizontal: 2 }} />
                                     </View>
                                     <Text style={{ fontSize: 10 }}>32,642,013</Text>
                                 </View>
                                 <View>
-
+                                    <Text style={{ fontSize: 25, fontWeight: 'bold', marginBottom: 5 }}>Rate dan review</Text>
+                                    <Text style={{ fontSize: 15, marginBottom: 20 }}>Bagikan pengalaman kamu kepada yang lainnya.</Text>
+                                </View>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20 }}>
+                                    <Image source={{ uri: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80' }} style={{ borderRadius: 30, padding: 2, backgroundColor: 'white', width: 50, height: 50 }} />
+                                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                        <MaterialCommunityIcons name="star-outline" size={30} style={{ marginHorizontal: 5, color: colors.primary.seaSalt['sea-salt-darker'] }} />
+                                        <MaterialCommunityIcons name="star-outline" size={30} style={{ marginHorizontal: 5, color: colors.primary.seaSalt['sea-salt-darker'] }} />
+                                        <MaterialCommunityIcons name="star-outline" size={30} style={{ marginHorizontal: 5, color: colors.primary.seaSalt['sea-salt-darker'] }} />
+                                        <MaterialCommunityIcons name="star-outline" size={30} style={{ marginHorizontal: 5, color: colors.primary.seaSalt['sea-salt-darker'] }} />
+                                        <MaterialCommunityIcons name="star-outline" size={30} style={{ marginHorizontal: 5, color: colors.primary.seaSalt['sea-salt-darker'] }} />
+                                    </View>
+                                </View>
+                                <View style={{ marginVertical: 20 }}>
+                                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                        <Image source={{ uri: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80' }} style={{ borderRadius: 30, padding: 2, backgroundColor: 'white', width: 50, height: 50 }} />
+                                        <View style={{ marginLeft: 20 }}>
+                                            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Raihan Baik 069</Text>
+                                            <Text>Mahasiswa</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                            <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={28} style={{ marginHorizontal: 2 }} />
+                                            <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={28} style={{ marginHorizontal: 2 }} />
+                                            <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={28} style={{ marginHorizontal: 2 }} />
+                                            <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={28} style={{ marginHorizontal: 2 }} />
+                                            <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={28} style={{ marginHorizontal: 2 }} />
+                                        </View>
+                                        <View style={{ backgroundColor: colors.secondary.pandan['pandan-lighter'], fontSize: 12, marginLeft: 5, padding: 8, borderRadius: 10 }}>
+                                            <Text>5 Hari yang lalu</Text>
+                                        </View>
+                                    </View>
+                                    <Text style={{ marginTop: 10, fontSize: 15 }}>FILKOM UB menyediakan berbagai fasilitas yang dibutuhkan dan cukup bersih</Text>
+                                </View>
+                                <View style={{ marginVertical: 20 }}>
+                                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                        <Image source={{ uri: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80' }} style={{ borderRadius: 30, padding: 2, backgroundColor: 'white', width: 50, height: 50 }} />
+                                        <View style={{ marginLeft: 20 }}>
+                                            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Raihan Baik 069</Text>
+                                            <Text>Mahasiswa</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                            <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={28} style={{ marginHorizontal: 2 }} />
+                                            <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={28} style={{ marginHorizontal: 2 }} />
+                                            <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={28} style={{ marginHorizontal: 2 }} />
+                                            <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={28} style={{ marginHorizontal: 2 }} />
+                                            <MaterialCommunityIcons color={colors.secondary.turmeric['turmeric-light']} name="star" size={28} style={{ marginHorizontal: 2 }} />
+                                        </View>
+                                        <View style={{ backgroundColor: colors.secondary.pandan['pandan-lighter'], fontSize: 12, marginLeft: 5, padding: 8, borderRadius: 10 }}>
+                                            <Text>5 Hari yang lalu</Text>
+                                        </View>
+                                    </View>
+                                    <Text style={{ marginTop: 10, fontSize: 15 }}>FILKOM UB menyediakan berbagai fasilitas yang dibutuhkan dan cukup bersih</Text>
                                 </View>
                             </View>
                         </ScrollView>
