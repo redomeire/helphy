@@ -3,7 +3,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useTheme } from "@react-navigation/native";
 
-const PlaceCard = () => {
+const PlaceCard = ({ navigation }) => {
     const { colors } = useTheme();
 
     return (
@@ -16,13 +16,13 @@ const PlaceCard = () => {
             <Text style={{ fontWeight: 'bold', fontSize: 20, marginVertical: 10 }}>Fakultas Ilmu Komputer</Text>
             <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
                 <Text style={{ fontSize: 12, color: colors.monochrome.pepper['pepper'] }}>Jl. MT. Haryono No.169, Ketawanggede, Kec. Lowokwaru, Kota Malang.</Text>
-                <MaterialCommunityIcons name="chevron-right" size={25}/>
+                <MaterialCommunityIcons onPress={() => navigation.navigate('ReviewScreen', { screen: 'Review' })} name="chevron-right" size={25}/>
             </View>
         </View>
     );
 }
 
-const ReviewTempat = () => {
+const ReviewTempat = ({ navigation }) => {
     const { colors } = useTheme();
 
     const styles = StyleSheet.create({
@@ -57,9 +57,9 @@ const ReviewTempat = () => {
                 </View>
             </View>
             <ScrollView style={{ paddingHorizontal: 20, marginBottom: 80 }}>
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
+                <PlaceCard navigation={navigation}/>
+                <PlaceCard navigation={navigation}/>
+                <PlaceCard navigation={navigation}/>
             </ScrollView>
         </View>
     );
