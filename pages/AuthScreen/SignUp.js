@@ -4,9 +4,27 @@ import { StyleSheet, TextInput, Button, Text, ScrollView, View, Image, ImageBack
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import axios from 'axios';
+import React from 'react';
 
 export default function Login({ navigation }) {
-    const { colors } = useTheme()
+    const { colors } = useTheme();
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+
+    const register = () => {
+        axios.post('https://reqres.in/api/register', {
+            email,
+            password
+        })
+        .then((res) => {
+            console.log(res);
+            navigation.navigate('Login');
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }
 
     return (
         <ScrollView>
@@ -66,6 +84,7 @@ export default function Login({ navigation }) {
                         placeholder='Email' 
                         style={styles.input}
                         textContentType='emailAddress'
+                        onChangeText={text => setEmail(text)}
                         />
                     </View>
                     
@@ -105,6 +124,7 @@ export default function Login({ navigation }) {
                         style={styles.input}
                         textContentType='password'
                         secureTextEntry={true}
+                        onChangeText={text => setPassword(text)}
                         />
                     </View>
                 </View>
@@ -119,7 +139,7 @@ export default function Login({ navigation }) {
                     width:350
                 }}>Dengan melakukan pendaftaran, anda telah menyetujui <Text style={{color:colors.primary.taro['taro'], fontWeight:'600'}}>syarat dan ketentuan</Text> yang berlaku. </Text>
                 
-                <TouchableOpacity style={styles.button} onPress={() => console.log('daftar')}>
+                <TouchableOpacity style={styles.button} onPress={() => register()}>
                     <Text style={styles.text}>Daftar</Text>
                 </TouchableOpacity>
 

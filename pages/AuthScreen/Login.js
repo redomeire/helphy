@@ -4,9 +4,27 @@ import { StyleSheet, TextInput, Button, Text, ScrollView, View, Image, ImageBack
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import React from 'react';
+import axios from 'axios';
 
 export default function Login({ navigation }) {
     const { fonts, colors } = useTheme();
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+
+    const fetchingData = () => {
+        axios.post('https://reqres.in/api/login', {
+            email,
+            password
+        })
+        .then((res) => {
+            console.log(res.data);
+            navigation.navigate('BottomAppBarScreen')
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }
 
     return (
         <ScrollView>
@@ -46,6 +64,7 @@ export default function Login({ navigation }) {
                         placeholder='Email' 
                         style={styles.input}
                         textContentType='emailAddress'
+                        onChangeText={text => setEmail(text)}
                         />
                     </View>
                     
@@ -66,6 +85,7 @@ export default function Login({ navigation }) {
                         style={styles.input}
                         textContentType='password'
                         secureTextEntry={true}
+                        onChangeText={text => setPassword(text)}
                         />
                     </View>
 
@@ -81,7 +101,7 @@ export default function Login({ navigation }) {
                     }}
                     >Lupa Password?</Text>
 
-                    <TouchableOpacity onPress={() => navigation.navigate('BottomAppBarScreen')} style={styles.button}>
+                    <TouchableOpacity onPress={() => fetchingData()} style={styles.button}>
                         <Text style={styles.text}>Masuk</Text>
                     </TouchableOpacity>
 
