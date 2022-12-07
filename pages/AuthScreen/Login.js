@@ -6,6 +6,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import React from 'react';
 import axios from 'axios';
+import { createAlert } from '../../components/alert/Alert';
 
 export default function Login({ navigation }) {
     const { fonts, colors } = useTheme();
@@ -19,10 +20,21 @@ export default function Login({ navigation }) {
         })
         .then((res) => {
             console.log(res.data);
-            navigation.navigate('BottomAppBarScreen')
+            createAlert(
+                'Success login',
+                'Hope you enjoy the app!',
+                'ok',
+                () => { navigation.navigate('BottomAppBarScreen') }
+            )
         })
         .catch((err) => {
             console.log(err);
+            createAlert(
+                'Error login',
+                'email/password not valid',
+                'ok',
+                () => {}
+            )
         })
     }
 
