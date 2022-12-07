@@ -1,17 +1,29 @@
+import React from 'react';
+import axios from 'axios';
 import { StatusBar } from 'expo-status-bar';
 import { useTheme } from '@react-navigation/native';
-import { StyleSheet, TextInput, Button, Text, ScrollView, View, Image, ImageBackground, Pressable, TouchableOpacity,} from 'react-native';
+import { StyleSheet, TextInput, Text, ScrollView, View, Image, Pressable, TouchableOpacity,} from 'react-native';
+
+// icons
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import React from 'react';
-import axios from 'axios';
+
+// redux
 import { createAlert } from '../../components/alert/Alert';
+import { useDispatch } from 'react-redux';
+import { update } from "../../components/data/loginStatusReducer";
 
 export default function Login({ navigation }) {
-    const { fonts, colors } = useTheme();
+    const { colors } = useTheme();
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
+
+    const dispatch = useDispatch();
+
+    const updateLoginStatus = (token) => {
+        dispatch(update({ isLoggedIn: true, token: token }))
+    }
 
     const fetchingData = () => {
         axios.post('https://reqres.in/api/login', {
@@ -20,11 +32,12 @@ export default function Login({ navigation }) {
         })
         .then((res) => {
             console.log(res.data);
+
             createAlert(
                 'Success login',
                 'Hope you enjoy the app!',
                 'ok',
-                () => { navigation.navigate('BottomAppBarScreen') }
+                () => updateLoginStatus(res.data.token)
             )
         })
         .catch((err) => {

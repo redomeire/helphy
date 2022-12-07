@@ -1,20 +1,36 @@
 import { useTheme } from "@react-navigation/native";
-import { ScrollView, View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import { ScrollView, View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 // icons
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Entypo from "react-native-vector-icons/Entypo";
 
-export default function Profile({ navigation }) {
-    const { colors } = useTheme();
+// redux
+import { useDispatch } from "react-redux";
+import { update } from "../../components/data/loginStatusReducer";
 
+// alert
+import { createAlert } from "../../components/alert/Alert";
+
+export default function Profile() {
+    const { colors } = useTheme();
+    const dispatch = useDispatch();
+
+    const logout = () => {
+        createAlert('Logout from System',
+            'Are you sure want to log out?',
+            'OK',
+            () => {
+                dispatch(update({ isLoggedIn: false, token: '' }))
+            }
+        )
+    }
 
     const styles = StyleSheet.create({
         container: {
             paddingTop: 50,
             backgroundColor: colors.monochrome.pepper['pepper-lighter'],
             minHeight: '100%',
-            // paddingHorizontal: 20,
             marginBottom: 100
         },
         searchBar: {
@@ -117,14 +133,14 @@ export default function Profile({ navigation }) {
             </View>
             <View style={{ marginBottom: 100, paddingHorizontal: 20 }}>
                 <Text style={{ marginBottom: 20 }}>Version 1.0</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{
+                <TouchableOpacity onPress={() => logout()} style={{
                     alignItems: 'center',
                     justifyContent: 'center',
                     paddingVertical: 12,
-                    cursor:'pointer',
+                    cursor: 'pointer',
                     borderRadius: 20,
-                    width:270,
-                    marginLeft:40,
+                    width: 270,
+                    marginLeft: 40,
                     elevation: 5,
                     backgroundColor: '#7F4FE3',
                 }}>
