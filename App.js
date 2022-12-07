@@ -1,26 +1,12 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { MyTheme } from './components/theme/AppTheme';
-import Login from './pages/AuthScreen/Login';
-import Signup from './pages/AuthScreen/SignUp';
-import BottomAppBarScreen from './components/navigators/BottomAppBarScreen';
-import FeatureAppNavigation from './components/navigators/FeatureAppNavigation';
-import ReviewScreen from './components/navigators/ReviewScreen';
-
-const Stack = createNativeStackNavigator();
+import { Provider } from 'react-redux';
+import { store } from './components/data/store';
+import Screen from './Screen';
 
 export default function App() {
+
   return (
-    <NavigationContainer theme={MyTheme}>
-      <Stack.Navigator screenOptions={{
-            headerShown: false
-        }}>
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="Register" component={Signup} />
-            <Stack.Screen name="BottomAppBarScreen" component={BottomAppBarScreen} />
-            <Stack.Screen name="FeatureAppNavigation" component={FeatureAppNavigation} />
-            <Stack.Screen name="ReviewScreen" component={ReviewScreen} />
-        </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <Screen/>
+    </Provider>
   );
 }

@@ -1,12 +1,55 @@
+import React from 'react';
+import axios from 'axios';
 import { StatusBar } from 'expo-status-bar';
 import { useTheme } from '@react-navigation/native';
-import { StyleSheet, TextInput, Button, Text, ScrollView, View, Image, ImageBackground, Pressable, TouchableOpacity,} from 'react-native';
+import { StyleSheet, TextInput, Text, ScrollView, View, Image, Pressable, TouchableOpacity,} from 'react-native';
+
+// icons
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
+// redux
+import { createAlert } from '../../components/alert/Alert';
+import { useDispatch } from 'react-redux';
+import { update } from "../../components/data/loginStatusReducer";
+
 export default function Login({ navigation }) {
-    const { fonts, colors } = useTheme();
+    const { colors } = useTheme();
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+
+    const dispatch = useDispatch();
+
+    const updateLoginStatus = (token) => {
+        dispatch(update({ isLoggedIn: true, token: token }))
+    }
+
+    const fetchingData = () => {
+        axios.post('https://reqres.in/api/login', {
+            email,
+            password
+        })
+        .then((res) => {
+            console.log(res.data);
+
+            createAlert(
+                'Success login',
+                'Hope you enjoy the app!',
+                'ok',
+                () => updateLoginStatus(res.data.token)
+            )
+        })
+        .catch((err) => {
+            console.log(err);
+            createAlert(
+                'Error login',
+                'email/password not valid',
+                'ok',
+                () => {}
+            )
+        })
+    }
 
     return (
         <ScrollView>
@@ -46,6 +89,7 @@ export default function Login({ navigation }) {
                         placeholder='Email' 
                         style={styles.input}
                         textContentType='emailAddress'
+                        onChangeText={text => setEmail(text)}
                         />
                     </View>
                     
@@ -66,6 +110,7 @@ export default function Login({ navigation }) {
                         style={styles.input}
                         textContentType='password'
                         secureTextEntry={true}
+                        onChangeText={text => setPassword(text)}
                         />
                     </View>
 
@@ -81,7 +126,7 @@ export default function Login({ navigation }) {
                     }}
                     >Lupa Password?</Text>
 
-                    <TouchableOpacity onPress={() => navigation.navigate('BottomAppBarScreen')} style={styles.button}>
+                    <TouchableOpacity onPress={() => fetchingData()} style={styles.button}>
                         <Text style={styles.text}>Masuk</Text>
                     </TouchableOpacity>
 
