@@ -6,21 +6,25 @@ import Signup from './pages/AuthScreen/SignUp';
 import BottomAppBarScreen from './components/navigators/BottomAppBarScreen';
 import FeatureAppNavigation from './components/navigators/FeatureAppNavigation';
 import ReviewScreen from './components/navigators/ReviewScreen';
+import { Provider } from 'react-redux';
+import { store } from './components/data/store';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer theme={MyTheme}>
-      <Stack.Navigator screenOptions={{
-            headerShown: false
+    <Provider store={store}>
+      <NavigationContainer theme={MyTheme}>
+        <Stack.Navigator screenOptions={{
+          headerShown: false
         }}>
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="Register" component={Signup} />
-            <Stack.Screen name="BottomAppBarScreen" component={BottomAppBarScreen} />
-            <Stack.Screen name="FeatureAppNavigation" component={FeatureAppNavigation} />
-            <Stack.Screen name="ReviewScreen" component={ReviewScreen} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Register" component={Signup} />
+          <Stack.Screen name="BottomAppBarScreen" component={BottomAppBarScreen} />
+          <Stack.Screen name="FeatureAppNavigation" component={FeatureAppNavigation} />
+          <Stack.Screen name="ReviewScreen" component={ReviewScreen} />
         </Stack.Navigator>
-    </NavigationContainer>
+      </NavigationContainer>
+    </Provider>
   );
 }
