@@ -57,8 +57,8 @@ export default function Login({ navigation }) {
                 <Image 
                 source={require('../../assets/Login-SignUp/Saly-1.png')}
                 style={{
-                    width: 400,
-                    height: 400
+                    width: 350,
+                    height: 350
                 }}
                 />
                 <Text fontWeight="700" style={{
