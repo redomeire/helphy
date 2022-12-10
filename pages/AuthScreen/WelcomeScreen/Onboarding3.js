@@ -60,14 +60,14 @@ export default function Onboarding3({ navigation }) {
       <Image
         source={require("../../../assets/Onboarding/image-3.png")}
         style={{
-          width: 300,
-          height: 300,
-          marginTop:100,
+          width: 230,
+          height: 250,
+          marginTop: 50,
         }}
       />
       <View
         style={{
-            minWidth:'100%',
+          minWidth:'100%',
           padding: 28,
           paddingTop: 18,
           backgroundColor: "white",
@@ -85,11 +85,11 @@ export default function Onboarding3({ navigation }) {
             color: colors.monochrome.shallot["shallot-darkest"],
           }}
         >
-          Temukan tempat yang nyaman untuk kamu!
+          Helphy Assistant siap membantumu.
         </Text>
 
-        <Text style={{...styles.text, marginBottom:10}}>
-        Helphy memberikan informasi tempat-tempat yang ramah untuk teman-teman disabilitas.
+        <Text style={{...styles.text, marginBottom:30}}>
+        Katakan Helphy, maka Helphy Assistant siap membantu kamu mencari fitur yang diinginkan dengan memberikan suara saja.
         </Text>
         
         <View style={{justifyContent: 'center', alignItems: 'center', marginTop:20, marginBottom:30}}>
