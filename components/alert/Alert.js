@@ -1,15 +1,12 @@
 import { Alert } from "react-native"
 
-const createAlert = (title, message, text, callback) => {
+const createAlert = (props) => {
+    const { title, message, options } = props;
+
     return Alert.alert(
         title,
         message,
-        [
-            {
-                text: text,
-                onPress: callback
-            }
-        ]
+        options
     )
 }
 
