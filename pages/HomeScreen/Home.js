@@ -1,5 +1,5 @@
 import { useTheme } from '@react-navigation/native';
-import { StyleSheet, Text, View, Image, ScrollView, ImageBackground, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, ImageBackground, StatusBar, Pressable } from 'react-native';
 
 // images
 import AlatBantu from "../../assets/Home/alat-bantu.png";
@@ -112,7 +112,7 @@ export default function Home({ navigation }) {
                     {
                         data.map((item, index) => {
                             return (
-                                <View key={index} style={styles.card}>
+                                <Pressable onPress={() => navigation.navigate('FeatureAppNavigation', { screen: item.onPress })} key={index} style={styles.card}>
                                     <ImageBackground
                                         source={item.image}
                                         style={{
@@ -149,7 +149,7 @@ export default function Home({ navigation }) {
                                             }}
                                         />
                                     </View>
-                                </View>
+                                </Pressable>
                             )
                         })
                     }

@@ -84,6 +84,7 @@ export default function Review({ navigation }) {
             <View style={{ position: 'absolute', top: 200, width: '100%', borderTopLeftRadius: 50, borderTopRightRadius: 50, }}>
                 <ScrollView style={{ width: '100%', borderTopLeftRadius: 50, borderTopRightRadius: 50, maxHeight: 800 }}>
                     <View style={{ backgroundColor: 'white', height: 800, marginTop: 300, borderTopLeftRadius: 50, borderTopRightRadius: 50, padding: 30 }}>
+                        <View style={{ padding: 2, width: 50, height: 5, borderRadius: 20, backgroundColor: colors.monochrome.pepper['pepper-light'], marginHorizontal: '45%', marginBottom: 20 }} />
                         <ScrollView nestedScrollEnabled style={{ maxHeight: 400 }}>
                             <Text style={{ fontSize: 25, fontWeight: 'bold' }}>Fakultas Ilmu Komputer</Text>
                             <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 20, marginTop: 10 }}>
