@@ -15,17 +15,17 @@ const Tab = createBottomTabNavigator();
 const bottomAppBarData = [
     {
       name: 'AlatBantu',
-      icon: "home",
+      icon: "human-cane",
       component: AlatBantu
     },
     {
       name: 'Pendamping',
-      icon: "history",
+      icon: "human-greeting-variant",
       component: Pendamping
     },
     {
       name: 'ReviewTempat',
-      icon: "microphone",
+      icon: "google-maps",
       component: ReviewTempat
     },
   ]

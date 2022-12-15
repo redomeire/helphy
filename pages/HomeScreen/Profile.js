@@ -12,18 +12,30 @@ import { update } from "../../components/data/loginStatusReducer";
 // alert
 import { createAlert } from "../../components/alert/Alert";
 
-export default function Profile() {
+export default function Profile({ navigation }) {
     const { colors } = useTheme();
     const dispatch = useDispatch();
 
     const logout = () => {
-        createAlert('Logout from System',
-            'Are you sure want to log out?',
-            'OK',
-            () => {
-                dispatch(update({ isLoggedIn: false, token: '' }))
-            }
-        )
+        createAlert({
+            title: 'Logout from System',
+            message: 'Are you sure want to log out?',
+            options:
+                [
+                    {
+                        text: 'Cancel',
+                        onPress: () => { }
+                    },
+                    {
+                        text: 'OK',
+                        onPress: () => {
+                            dispatch(update({ isLoggedIn: false, token: '' }));
+                            
+                            navigation.navigate('AuthScreen', { screen: 'Login'});
+                        }
+                    }
+                ]
+        })
     }
 
     const styles = StyleSheet.create({

@@ -20,9 +20,9 @@ export default function Onboarding1({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       height: "100%",
-      PaddingTop: 100,
-      alignItems: "center",
+      alignItems: "center", 
       justifyContent: "center",
+      PaddingTop: 100,
       backgroundColor: colors.primary.taro["taro-light"],
     },
     scroll_container: {
@@ -60,9 +60,9 @@ export default function Onboarding1({ navigation }) {
       <Image
         source={require("../../../assets/Onboarding/image-1.png")}
         style={{
-          width: 200,
-          height: 300,
-          marginTop:100,
+          width: 180,
+          height: 220,
+          marginTop: 50,
         }}
       />
       <View
@@ -72,7 +72,8 @@ export default function Onboarding1({ navigation }) {
           backgroundColor: "white",
           borderTopLeftRadius: 64,
           borderTopRightRadius: 64,
-          marginTop: 40,
+          width: '100%',
+          marginTop: 50
         }}
       >
         <Text
@@ -101,7 +102,7 @@ export default function Onboarding1({ navigation }) {
         </TouchableOpacity>
         </View>
 
-        <View style={{marginBottom:65, justifyContent: 'center', alignItems: 'center', marginTop:20}}>
+        <View style={{ justifyContent: 'center', alignItems: 'center', marginTop:20}}>
         <TouchableOpacity
           onPress={() => navigation.navigate('Login')}
         >

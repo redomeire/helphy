@@ -4,12 +4,8 @@ import {
   Text,
   View,
   Image,
-  ScrollView,
-  ImageBackground,
   StatusBar,
   TouchableOpacity,
-  Pressable,
-  Button
 } from "react-native";
 
 import Image2 from "../../../assets/Onboarding/image-2.png";
@@ -60,20 +56,20 @@ export default function Onboarding2({ navigation }) {
       <Image
         source={require("../../../assets/Onboarding/image-2.png")}
         style={{
-          width: 300,
-          height: 300,
-          marginTop:100,
+          width: 230,
+          height: 250,
+          marginTop: 100,
         }}
       />
       <View
         style={{
-            minWidth:'100%',
           padding: 28,
           paddingTop: 18,
           backgroundColor: "white",
           borderTopLeftRadius: 64,
           borderTopRightRadius: 64,
-          marginTop: 40,
+          width: '100%',
+          marginTop: 50
         }}
       >
         <Text
