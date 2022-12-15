@@ -20,15 +20,28 @@ export default function Login({ navigation }) {
         })
             .then((res) => {
                 console.log(res);
-                createAlert(
-                    'Success register',
-                    'success creating new account',
-                    'ok',
-                    () => { navigation.navigate('Login') }
-                );
+                createAlert({
+                    title: 'Success register',
+                    message: 'Now you can use your account',
+                    options: [
+                        {
+                            text: 'OK',
+                            onPress: () => navigation.navigate('Login')
+                        }
+                    ]
+                })
             })
             .catch((err) => {
-                console.log(err.message);
+                createAlert({
+                    title: 'Error register',
+                    message: err.message,
+                    options: [
+                        {
+                            text: 'OK',
+                            onPress: () => {}
+                        }
+                    ]
+                })
             })
     }
 
