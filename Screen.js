@@ -7,11 +7,20 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { MyTheme } from './components/theme/AppTheme';
 import AuthScreen from './components/navigators/AuthScreen';
+import React from 'react';
+import SplashScreen from './components/navigators/SplashScreen';
 
 export default function Screen() {
     const { isLoggedIn, token } = useSelector(state => state.loginStatus);
+    const [isLoading, setIsLoading] = React.useState(true);
 
     const Stack = createNativeStackNavigator();
+
+    React.useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 2000);
+    }, [])
 
     return (
         <NavigationContainer theme={MyTheme}>
@@ -19,6 +28,7 @@ export default function Screen() {
                 headerShown: false
             }}>
                 {
+                    !isLoading ?
                     !isLoggedIn && token === '' ? (
                         <Stack.Screen name="AuthScreen" component={AuthScreen} />
                     ) : (
@@ -27,7 +37,8 @@ export default function Screen() {
                             <Stack.Screen name="FeatureAppNavigation" component={FeatureAppNavigation} />
                             <Stack.Screen name="ReviewScreen" component={ReviewScreen} />
                         </>
-                    )
+                    ) :
+                    <Stack.Screen name='SplashScreen' component={SplashScreen}/>
                 }
             </Stack.Navigator>
         </NavigationContainer>
