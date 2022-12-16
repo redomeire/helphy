@@ -1,4 +1,4 @@
-import { View, Image, TextInput, StatusBar, StyleSheet, ImageBackground, Text, ScrollView } from "react-native";
+import { View, TextInput, StatusBar, StyleSheet, ImageBackground, Text, ScrollView, Pressable } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useTheme } from "@react-navigation/native";
@@ -7,7 +7,7 @@ const PlaceCard = ({ navigation }) => {
     const { colors } = useTheme();
 
     return (
-        <View style={{ borderRadius: 25, padding: 20, backgroundColor: 'white', marginBottom: 30 }}>
+        <Pressable onPress={() => navigation.navigate('ReviewScreen', { screen: 'Review' })} style={{ borderRadius: 25, padding: 20, backgroundColor: 'white', marginBottom: 30 }}>
             <ImageBackground source={{
                 uri: 'https://images.unsplash.com/photo-1435575653489-b0873ec954e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
             }} style={{
@@ -16,9 +16,9 @@ const PlaceCard = ({ navigation }) => {
             <Text style={{ fontWeight: 'bold', fontSize: 20, marginVertical: 10 }}>Fakultas Ilmu Komputer</Text>
             <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
                 <Text style={{ fontSize: 12, color: colors.monochrome.pepper['pepper'] }}>Jl. MT. Haryono No.169, Ketawanggede, Kec. Lowokwaru, Kota Malang.</Text>
-                <MaterialCommunityIcons onPress={() => navigation.navigate('ReviewScreen', { screen: 'Review' })} name="chevron-right" size={25}/>
+                <MaterialCommunityIcons name="chevron-right" size={25}/>
             </View>
-        </View>
+        </Pressable>
     );
 }
 
@@ -29,7 +29,6 @@ const ReviewTempat = ({ navigation }) => {
         container: {
             paddingTop: 40,
             backgroundColor: colors.monochrome.pepper['pepper-lighter'], minHeight: '100%',
-            // paddingHorizontal: 20,
             paddingBottom: 20
         },
         searchBar: {
