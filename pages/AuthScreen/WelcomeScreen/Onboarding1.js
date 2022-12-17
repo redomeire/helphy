@@ -19,10 +19,10 @@ export default function Onboarding1({ navigation }) {
 
   const styles = StyleSheet.create({
     container: {
-      height: "100%",
       alignItems: "center", 
       justifyContent: "center",
       PaddingTop: 100,
+      height:"114%",
       backgroundColor: colors.primary.taro["taro-light"],
     },
     scroll_container: {
@@ -45,9 +45,10 @@ export default function Onboarding1({ navigation }) {
     },
     text: {
       fontSize: 18,
-      textAlign: "justify",
+      textAlign:"justify",
       lineHeight: 25,
       color: colors.monochrome.shallot["shallot-dark"],
+      paddingHorizontal:10
     },
   });
 

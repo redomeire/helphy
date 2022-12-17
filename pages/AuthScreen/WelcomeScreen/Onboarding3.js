@@ -19,7 +19,7 @@ export default function Onboarding3({ navigation }) {
 
   const styles = StyleSheet.create({
     container: {
-      height: "100%",
+      height:"107%",
       PaddingTop: 100,
       alignItems: "center",
       justifyContent: "center",
