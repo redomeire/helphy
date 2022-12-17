@@ -9,20 +9,22 @@ import {
   StatusBar,
   TouchableOpacity,
   Pressable,
-  Button
+  Button,
+  Dimensions,
 } from "react-native";
 
 import Image1 from "../../../assets/Onboarding/image-1.png";
 
 export default function Onboarding1({ navigation }) {
+  let screenHeight = Dimensions.get("window").height;
   const { colors } = useTheme();
 
   const styles = StyleSheet.create({
     container: {
-      alignItems: "center", 
+      alignItems: "center",
       justifyContent: "center",
       PaddingTop: 100,
-      height:"114%",
+      height: screenHeight,
       backgroundColor: colors.primary.taro["taro-light"],
     },
     scroll_container: {
@@ -41,14 +43,14 @@ export default function Onboarding1({ navigation }) {
       borderRadois: 20,
       width: 150,
       backgroundColor: colors.primary.taro["taro-light"],
-      borderRadius:20,
+      borderRadius: 20,
     },
     text: {
       fontSize: 18,
-      textAlign:"justify",
+      textAlign: "justify",
       lineHeight: 25,
       color: colors.monochrome.shallot["shallot-dark"],
-      paddingHorizontal:10
+      paddingHorizontal: 10,
     },
   });
 
@@ -63,7 +65,8 @@ export default function Onboarding1({ navigation }) {
         style={{
           width: 180,
           height: 220,
-          marginTop: 50,
+          marginTop: -200,
+          position: "relative",
         }}
       />
       <View
@@ -73,8 +76,9 @@ export default function Onboarding1({ navigation }) {
           backgroundColor: "white",
           borderTopLeftRadius: 64,
           borderTopRightRadius: 64,
-          width: '100%',
-          marginTop: 50
+          width: "100%",
+          bottom: 0,
+          position: "absolute",
         }}
       >
         <Text
@@ -89,26 +93,54 @@ export default function Onboarding1({ navigation }) {
           Pinjam alat bantu dimana saja
         </Text>
 
-        <Text style={{...styles.text, marginBottom:10}}>
+        <Text style={{ ...styles.text, marginBottom: 10 }}>
           Meminjam alat bantu dengan persyaratan yang mudah dan dapat dilakukan
           dengan satu klik!
         </Text>
-        
-        <View style={{justifyContent: 'center', alignItems: 'center', marginTop:20}}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Onboarding2')}
-          style={styles.button}
+
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 20,
+          }}
         >
-          <Text style={{color: "white", justifyContent:'center', alignItems: 'center', fontWeight: 'bold' }}>Lanjutkan</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Onboarding2")}
+            style={styles.button}
+          >
+            <Text
+              style={{
+                color: "white",
+                justifyContent: "center",
+                alignItems: "center",
+                fontWeight: "bold",
+              }}
+            >
+              Lanjutkan
+            </Text>
+          </TouchableOpacity>
         </View>
 
-        <View style={{ justifyContent: 'center', alignItems: 'center', marginTop:20}}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Login')}
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 20,
+          }}
         >
-          <Text style={{color: colors.primary.taro["taro"], justifyContent:'center', alignItems: 'center', fontWeight: 'bold' }}>Skip</Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+            <Text
+              style={{
+                color: colors.primary.taro["taro"],
+                justifyContent: "center",
+                alignItems: "center",
+                fontWeight: "bold",
+              }}
+            >
+              Skip
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
       <StatusBar style="auto" />

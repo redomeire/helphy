@@ -6,16 +6,18 @@ import {
   Image,
   StatusBar,
   TouchableOpacity,
+  Dimensions,
 } from "react-native";
 
 import Image2 from "../../../assets/Onboarding/image-2.png";
 
 export default function Onboarding2({ navigation }) {
   const { colors } = useTheme();
+  let screenHeight = Dimensions.get("window").height;
 
   const styles = StyleSheet.create({
     container: {
-      height:"105%",
+      height: screenHeight,
       PaddingTop: 100,
       alignItems: "center",
       justifyContent: "center",
@@ -37,14 +39,14 @@ export default function Onboarding2({ navigation }) {
       borderRadius: 20,
       width: 150,
       backgroundColor: colors.primary.taro["taro-light"],
-      borderRadius:20,
+      borderRadius: 20,
     },
     text: {
       fontSize: 18,
-      textAlign:"justify",
+      textAlign: "justify",
       lineHeight: 25,
       color: colors.monochrome.shallot["shallot-dark"],
-      paddingHorizontal:10
+      paddingHorizontal: 10,
     },
   });
 
@@ -59,7 +61,7 @@ export default function Onboarding2({ navigation }) {
         style={{
           width: 230,
           height: 250,
-          marginTop: 100,
+          marginTop: -200,
         }}
       />
       <View
@@ -69,8 +71,9 @@ export default function Onboarding2({ navigation }) {
           backgroundColor: "white",
           borderTopLeftRadius: 64,
           borderTopRightRadius: 64,
-          width: '100%',
-          marginTop: 50
+          width: "100%",
+          bottom: 0,
+          position: "absolute",
         }}
       >
         <Text
@@ -85,25 +88,54 @@ export default function Onboarding2({ navigation }) {
           Temukan tempat yang nyaman untuk kamu!
         </Text>
 
-        <Text style={{...styles.text, marginBottom:10}}>
-        Helphy memberikan informasi tempat-tempat yang ramah untuk teman-teman disabilitas.
+        <Text style={{ ...styles.text, marginBottom: 10 }}>
+          Helphy memberikan informasi tempat-tempat yang ramah untuk teman-teman
+          disabilitas.
         </Text>
-        
-        <View style={{justifyContent: 'center', alignItems: 'center', marginTop:20}}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Onboarding3')}
-          style={styles.button}
+
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 20,
+          }}
         >
-          <Text style={{color: "white", justifyContent:'center', alignItems: 'center', fontWeight: 'bold' }}>Lanjutkan</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Onboarding3")}
+            style={styles.button}
+          >
+            <Text
+              style={{
+                color: "white",
+                justifyContent: "center",
+                alignItems: "center",
+                fontWeight: "bold",
+              }}
+            >
+              Lanjutkan
+            </Text>
+          </TouchableOpacity>
         </View>
 
-        <View style={{marginBottom:65, justifyContent: 'center', alignItems: 'center', marginTop:20}}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Login')}
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 20,
+          }}
         >
-          <Text style={{color: colors.primary.taro["taro"], justifyContent:'center', alignItems: 'center', fontWeight: 'bold' }}>Skip</Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+            <Text
+              style={{
+                color: colors.primary.taro["taro"],
+                justifyContent: "center",
+                alignItems: "center",
+                fontWeight: "bold",
+              }}
+            >
+              Skip
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
       <StatusBar style="auto" />

@@ -9,7 +9,7 @@ import {
   StatusBar,
   TouchableOpacity,
   Pressable,
-  Button
+  Button,
 } from "react-native";
 
 import Image3 from "../../../assets/Onboarding/image-3.png";
@@ -19,7 +19,7 @@ export default function Onboarding3({ navigation }) {
 
   const styles = StyleSheet.create({
     container: {
-      height:"107%",
+      height: "100%",
       PaddingTop: 100,
       alignItems: "center",
       justifyContent: "center",
@@ -41,7 +41,7 @@ export default function Onboarding3({ navigation }) {
       borderRadois: 20,
       width: 150,
       backgroundColor: colors.primary.taro["taro-light"],
-      borderRadius:20,
+      borderRadius: 20,
     },
     text: {
       fontSize: 18,
@@ -62,18 +62,20 @@ export default function Onboarding3({ navigation }) {
         style={{
           width: 230,
           height: 250,
-          marginTop: 50,
+          marginTop: -200,
         }}
       />
       <View
         style={{
-          minWidth:'100%',
+          minWidth: "100%",
           padding: 28,
           paddingTop: 18,
           backgroundColor: "white",
           borderTopLeftRadius: 64,
           borderTopRightRadius: 64,
           marginTop: 40,
+          bottom: 0,
+          position: "absolute",
         }}
       >
         <Text
@@ -88,20 +90,35 @@ export default function Onboarding3({ navigation }) {
           Helphy Assistant siap membantumu.
         </Text>
 
-        <Text style={{...styles.text, marginBottom:30}}>
-        Katakan Helphy, maka Helphy Assistant siap membantu kamu mencari fitur yang diinginkan dengan memberikan suara saja.
+        <Text style={{ ...styles.text, marginBottom: 30 }}>
+          Katakan Helphy, maka Helphy Assistant siap membantu kamu mencari fitur
+          yang diinginkan dengan memberikan suara saja.
         </Text>
-        
-        <View style={{justifyContent: 'center', alignItems: 'center', marginTop:20, marginBottom:30}}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Login')}
-          style={styles.button}
+
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 20,
+            marginBottom: 30,
+          }}
         >
-          <Text style={{color: "white", justifyContent:'center', alignItems: 'center', fontWeight: 'bold' }}>Selesai</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Login")}
+            style={styles.button}
+          >
+            <Text
+              style={{
+                color: "white",
+                justifyContent: "center",
+                alignItems: "center",
+                fontWeight: "bold",
+              }}
+            >
+              Selesai
+            </Text>
+          </TouchableOpacity>
         </View>
-
-
       </View>
       <StatusBar style="auto" />
     </View>
