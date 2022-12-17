@@ -15,7 +15,7 @@ export default function Onboarding2({ navigation }) {
 
   const styles = StyleSheet.create({
     container: {
-      height: "100%",
+      height:"105%",
       PaddingTop: 100,
       alignItems: "center",
       justifyContent: "center",
@@ -34,16 +34,17 @@ export default function Onboarding2({ navigation }) {
       justifyContent: "center",
       paddingVertical: 12,
       cursor: "pinter",
-      borderRadois: 20,
+      borderRadius: 20,
       width: 150,
       backgroundColor: colors.primary.taro["taro-light"],
       borderRadius:20,
     },
     text: {
       fontSize: 18,
-      textAlign: "justify",
+      textAlign:"justify",
       lineHeight: 25,
       color: colors.monochrome.shallot["shallot-dark"],
+      paddingHorizontal:10
     },
   });
 
