@@ -131,6 +131,7 @@ export default function Onboarding2({ navigation }) {
                 justifyContent: "center",
                 alignItems: "center",
                 fontWeight: "bold",
+                marginBottom: 20
               }}
             >
               Skip
