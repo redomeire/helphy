@@ -60,9 +60,9 @@ export default function Onboarding3({ navigation }) {
       <Image
         source={require("../../../assets/Onboarding/image-3.png")}
         style={{
-          width: 230,
-          height: 250,
-          marginTop: -200,
+          width: 300,
+          height: 320,
+          marginTop: -340,
         }}
       />
       <View

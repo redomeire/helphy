@@ -63,9 +63,9 @@ export default function Onboarding1({ navigation }) {
       <Image
         source={require("../../../assets/Onboarding/image-1.png")}
         style={{
-          width: 180,
-          height: 220,
-          marginTop: -200,
+          width: 240,
+          height: 280,
+          marginTop: -300,
           position: "relative",
         }}
       />
@@ -73,6 +73,7 @@ export default function Onboarding1({ navigation }) {
         style={{
           padding: 28,
           paddingTop: 18,
+          paddingBottom: 40,
           backgroundColor: "white",
           borderTopLeftRadius: 64,
           borderTopRightRadius: 64,

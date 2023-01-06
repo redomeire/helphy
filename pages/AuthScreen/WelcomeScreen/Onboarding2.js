@@ -30,6 +30,7 @@ export default function Onboarding2({ navigation }) {
       padding: 20,
       paddingTop: 100,
       paddingHorizontal: 35,
+
     },
     button: {
       alignItems: "center",
@@ -59,9 +60,9 @@ export default function Onboarding2({ navigation }) {
       <Image
         source={require("../../../assets/Onboarding/image-2.png")}
         style={{
-          width: 230,
-          height: 250,
-          marginTop: -200,
+          width: 260,
+          height: 280,
+          marginTop: -320,
         }}
       />
       <View
@@ -71,6 +72,7 @@ export default function Onboarding2({ navigation }) {
           backgroundColor: "white",
           borderTopLeftRadius: 64,
           borderTopRightRadius: 64,
+          paddingBottom: 40,
           width: "100%",
           bottom: 0,
           position: "absolute",
